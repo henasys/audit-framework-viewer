@@ -1,5 +1,6 @@
 import Image from "next/image";
 import ImageLink from "@/components/ImageLink";
+import { CodePdfList, getFileInfo } from "@/components/CodePdfUtil";
 
 export default function Home() {
   return (
@@ -19,13 +20,19 @@ export default function Home() {
             width={800}
             height={600}
           />
-          <ImageLink
-            href="/data/EA01-1.pdf"
-            top={44}
-            right={20}
-            width={325}
-            height={26}
-          />
+          {CodePdfList.map((item) => {
+            const { url, top, height } = getFileInfo(item.order);
+            return (
+              <ImageLink
+                key={item.order}
+                href={url}
+                top={top}
+                right={20}
+                width={325}
+                height={height}
+              />
+            );
+          })}
         </div>
       </main>
     </>
