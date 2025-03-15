@@ -36,6 +36,7 @@ export default function ImageLink({
       <Link
         href={href}
         onClick={handleClick}
+        prefetch={false}
         className="absolute cursor-pointer bg-blue-500/5 hover:bg-blue-500/10 border border-blue-500/30 rounded-sm transition-all"
         style={{
           top: `${top}px`,
