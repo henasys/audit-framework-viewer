@@ -27,7 +27,7 @@ export default function ImageLink({
         alert("PDF 파일이 존재하지 않습니다.");
       }
     } catch (error) {
-      alert("PDF 파일을 확인하는 중 오류가 발생했습니다.");
+      alert(`PDF 파일을 확인하는 중 오류가 발생했습니다. ${error}`);
     }
   };
 
