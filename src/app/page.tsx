@@ -3,7 +3,7 @@ import ImageLink from "@/components/ImageLink";
 
 export default function Home() {
   return (
-    <div>
+    <>
       <main className="flex flex-col items-center">
         <Image
           src="/framework.png"
@@ -20,14 +20,14 @@ export default function Home() {
             height={600}
           />
           <ImageLink
-            href="/codes/EA01-1"
-            top={40}
+            href="/data/EA01-1.pdf"
+            top={44}
             right={20}
-            width={96}
-            height={30}
+            width={325}
+            height={26}
           />
         </div>
       </main>
-    </div>
+    </>
   );
 }

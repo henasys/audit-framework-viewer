@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 interface ImageLinkProps {
   href: string;
@@ -15,18 +18,33 @@ export default function ImageLink({
   width,
   height,
 }: ImageLinkProps) {
+  const handleClick = async (e: React.MouseEvent) => {
+    e.preventDefault();
+    try {
+      const response = await fetch(href);
+      if (response.ok) {
+        window.open(href, "_blank");
+      } else {
+        alert("PDF 파일이 존재하지 않습니다.");
+      }
+    } catch (error) {
+      alert("PDF 파일을 확인하는 중 오류가 발생했습니다.");
+    }
+  };
+
   return (
-    <Link
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="absolute cursor-pointer bg-blue-500/20 hover:bg-blue-500/40 border-2 border-blue-500 rounded-sm transition-all"
-      style={{
-        top: `${top}px`,
-        right: `${right}px`,
-        width: `${width}px`,
-        height: `${height}px`,
-      }}
-    />
+    <>
+      <Link
+        href={href}
+        onClick={handleClick}
+        className="absolute cursor-pointer bg-blue-500/20 hover:bg-blue-500/40 border-2 border-blue-500 rounded-sm transition-all"
+        style={{
+          top: `${top}px`,
+          right: `${right}px`,
+          width: `${width}px`,
+          height: `${height}px`,
+        }}
+      />
+    </>
   );
 }
