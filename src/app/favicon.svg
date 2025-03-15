@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="15" fill="#2563eb"/>
+  
+  <!-- Large magnifying glass -->
+  <circle cx="15" cy="15" r="8" fill="none" stroke="white" stroke-width="1.5"/>
+  <path d="M21 21 L26 26" stroke="white" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Bold "A" letter inside magnifying glass -->
+  <path d="M15 9 L18.5 19 H16.5 L15.8 17 H14.2 L13.5 19 H11.5 L15 9zM15 12 L14.2 15.5 H15.8 L15 12z" 
+        fill="white" stroke="white" stroke-width="0.5"/>
+</svg> 
